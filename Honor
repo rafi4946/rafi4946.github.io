@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MD ZAHID HASAN RAFI | Official</title>
+
+<meta name="description"
+content="Official website of MD ZAHID HASAN RAFI">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#030712;
+    --card:rgba(15,23,42,.65);
+    --border:rgba(255,255,255,.10);
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --cyan:#22d3ee;
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:var(--blue);
+    filter:blur(180px);
+    opacity:.18;
+    top:-200px;
+    left:-200px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:var(--purple);
+    filter:blur(180px);
+    opacity:.16;
+    right:-200px;
+    bottom:-200px;
+    z-index:-2;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:16px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(3,7,18,.65);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+    z-index:999;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:var(--cyan);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--cyan);
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(34,211,238,.3);
+    background:rgba(34,211,238,.08);
+    border-radius:50px;
+    color:var(--cyan);
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.profile-wrap{
+    position:relative;
+    display:inline-block;
+    margin-bottom:25px;
+}
+
+.profile{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid var(--cyan);
+    box-shadow:
+        0 0 25px rgba(34,211,238,.4),
+        0 0 70px rgba(59,130,246,.2);
+}
+
+.profile-wrap::before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    border:1px solid rgba(34,211,238,.4);
+    border-radius:50%;
+    animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+
+.hero h1{
+    font-size:clamp(36px,7vw,72px);
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.typing{
+    color:var(--muted);
+    font-size:20px;
+    min-height:30px;
+}
+
+.cursor{
+    color:var(--cyan);
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* ===============================
+   BUTTON
+================================ */
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 27px;
+    margin:6px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.05);
+    transition:.35s;
+}
+
+.btn.primary{
+    background:linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple)
+    );
+    border:none;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 40px rgba(59,130,246,.25);
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:var(--cyan);
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:10px;
+}
+
+/* ===============================
+   GLASS CARD
+================================ */
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:35px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(34,211,238,.3);
+}
+
+/* ===============================
+   ABOUT
+================================ */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card h3{
+    color:var(--cyan);
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* ===============================
+   STATS
+================================ */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:25px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:35px;
+    color:var(--cyan);
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill{
+    text-align:center;
+}
+
+.skill-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.skill h3{
+    margin-bottom:8px;
+}
+
+.skill p{
+    font-size:14px;
+}
+
+/* ===============================
+   SOCIAL
+================================ */
+
+.social{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.social a{
+    text-decoration:none;
+    color:white;
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    text-align:center;
+    background:rgba(255,255,255,.04);
+    transition:.3s;
+}
+
+.social a:hover{
+    transform:translateY(-5px);
+    background:rgba(34,211,238,.08);
+    border-color:var(--cyan);
+}
+
+/* ===============================
+   CONTACT
+================================ */
+
+.contact{
+    text-align:center;
+}
+
+.contact-info{
+    margin:20px 0;
+    color:var(--muted);
+}
+
+.contact-info div{
+    margin:12px;
+}
+
+/* ===============================
+   CLOCK
+================================ */
+
+.clock{
+    margin-top:25px;
+    color:var(--cyan);
+    font-size:14px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+}
+
+footer strong{
+    color:var(--cyan);
+}
+
+/* ===============================
+   SCROLL TOP
+================================ */
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:var(--blue);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .typing{
+        font-size:17px;
+    }
+
+    .about-grid,
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .social{
+        grid-template-columns:1fr 1fr;
+    }
+
+    section{
+        padding:70px 15px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+}
+
+@media(max-width:400px){
+
+    .social{
+        grid-template-columns:1fr;
+    }
+
+    .profile{
+        width:130px;
+        height:130px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ===============================
+     NAVIGATION
+================================ -->
+
+<nav>
+
+<div class="logo">
+RAFI
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#social">Social</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+
+<!-- ===============================
+     HERO
+================================ -->
+
+<header class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+✦ OFFICIAL PERSONAL WEBSITE ✦
+</div>
+
+<div class="profile-wrap">
+
+<img
+src="profile.jpg"
+alt="MD ZAHID HASAN RAFI"
+class="profile"
+>
+
+</div>
+
+<h1>
+MD <span>ZAHID HASAN RAFI</span>
+</h1>
+
+<div class="typing">
+<span id="typingText"></span>
+<span class="cursor">|</span>
+</div>
+
+<div class="buttons">
+
+<a href="#about" class="btn primary">
+Explore Website
+</a>
+
+<a href="#contact" class="btn">
+Contact Me
+</a>
+
+</div>
+
+<div class="clock">
+🕐 <span id="clock">Loading...</span>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ===============================
+     ABOUT
+================================ -->
+
+<section id="about">
+
+<div class="section-title">
+
+<small>WHO I AM</small>
+
+<h2>About Me</h2>
+
+</div>
+
+<div class="about-grid">
+
+<div class="card">
+
+<h3>👋 Welcome</h3>
+
+<p>
+স্বাগতম আমার অফিসিয়াল ব্যক্তিগত ওয়েবসাইটে।
+এটি আমার নিজের একটি অনলাইন স্পেস,
+যেখানে আমার সম্পর্কে বিভিন্ন তথ্য,
+ছবি, কাজ এবং ভবিষ্যতের বিভিন্ন প্রজেক্ট
+শেয়ার করা হবে।
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌐 My Vision</h3>
+
+<p>
+প্রযুক্তির মাধ্যমে নতুন কিছু শেখা,
+নিজের দক্ষতা বৃদ্ধি করা এবং
+নতুন নতুন আইডিয়া নিয়ে কাজ করাই
+আমার অন্যতম লক্ষ্য।
+</p>
+
+</div>
+
+</div>
+
+
+<div class="stats">
+
+<div class="card stat">
+<strong>01</strong>
+<span>Personal Website</span>
+</div>
+
+<div class="card stat">
+<strong>24/7</strong>
+<span>Online Presence</span>
+</div>
+
+<div class="card stat">
+<strong>∞</strong>
+<span>Future Possibilities</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+     SKILLS
+================================ -->
+
+<section id="skills">
+
+<div class="section-title">
+
+<small>MY INTERESTS</small>
+
+<h2>Skills & Interests</h2>
+
+</div>
+
+<div class="skills">
+
+<div class="card skill">
+
+<div class="skill-icon">💻</div>
+
+<h3>Technology</h3>
+
+<p>
+Technology এবং নতুন digital tools
+নিয়ে শেখা ও experiment করা।
+</p>
+
+</div>
+
+
+<div class="card skill">
+
+<div class="skill-icon">🌐</div>
+
+<h3>Web Design</h3>
+
+<p>
+Modern website design,
+HTML, CSS এবং web technology।
+</p>
+
+</div>
+
+
+<div class="card skill">
+
+<div class="skill-icon">🎬</div>
+
+<h3>Creative Work</h3>
+
+<p>
+Creative content, graphics,
+video এবং digital projects।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+     SOCIAL MEDIA
+================================ -->
+
+<section id="social">
+
+<div class="section-title">
+
+<small>CONNECT WITH ME</small>
+
+<h2>Social Media</h2>
+
+</div>
+
+<div class="social">
+
+<a href="#" target="_blank">
+▶️<br>
+YouTube
+</a>
+
+<a href="#" target="_blank">
+📘<br>
+Facebook
+</a>
+
+<a href="#" target="_blank">
+📷<br>
+Instagram
+</a>
+
+<a href="#" target="_blank">
+💬<br>
+Messenger
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+     CONTACT
+================================ -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<small>GET IN TOUCH</small>
+
+<h2>Contact Me</h2>
+
+</div>
+
+<div class="card contact">
+
+<h3>📩 Let's Connect</h3>
+
+<div class="contact-info">
+
+<div>
+📧 Email: your@email.com
+</div>
+
+<div>
+📱 Phone: +8801XXXXXXXXX
+</div>
+
+<div>
+🌍 Bangladesh
+</div>
+
+</div>
+
+<a
+href="mailto:your@email.com"
+class="btn primary"
+>
+Send Email
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+     FOOTER
+================================ -->
+
+<footer>
+
+<p>
+© 2026 <strong>MD ZAHID HASAN RAFI</strong>
+</p>
+
+<p>
+All Rights Reserved.
+</p>
+
+</footer>
+
+
+<button id="topBtn" onclick="topFunction()">
+↑
+</button>
+
+
+<!-- ===============================
+     JAVASCRIPT
+================================ -->
+
+<script>
+
+/* ===============================
+   TYPING EFFECT
+================================ */
+
+const texts = [
+    "Welcome to my official website",
+    "Creative • Technology • Future",
+    "Building something amazing...",
+    "This is my digital world"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typingText =
+document.getElementById("typingText");
+
+function typeEffect(){
+
+    const current =
+    texts[textIndex];
+
+    if(!deleting){
+
+        typingText.textContent =
+        current.substring(0,charIndex+1);
+
+        charIndex++;
+
+        if(charIndex === current.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+        }
+
+    }else{
+
+        typingText.textContent =
+        current.substring(0,charIndex-1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            textIndex++;
+
+            if(textIndex >= texts.length){
+                textIndex = 0;
+            }
+        }
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 90
+    );
+}
+
+typeEffect();
+
+
+/* ===============================
+   LIVE CLOCK
+================================ */
+
+function updateClock(){
+
+    const now = new Date();
+
+    const time =
+    now.toLocaleTimeString(
+        "en-BD",
+        {
+            hour:"2-digit",
+            minute:"2-digit",
+            second:"2-digit"
+        }
+    );
+
+    document.getElementById("clock")
+    .textContent = time;
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+
+/* ===============================
+   SCROLL TOP BUTTON
+================================ */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.onscroll = function(){
+
+    if(
+        document.body.scrollTop > 400 ||
+        document.documentElement.scrollTop > 400
+    ){
+
+        topBtn.style.display="block";
+
+    }else{
+
+        topBtn.style.display="none";
+
+    }
+
+};
+
+function topFunction(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
